@@ -1,0 +1,402 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #ffffff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4a79f3), to(#5741d7));
+  background-image: linear-gradient(#4a79f3, #5741d7);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+.search {
+  margin-top: 2rem;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.search__icon {
+  text-align: right;
+  font-size: 28px;
+}
+
+.info {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1rem;
+}
+
+.info__location h4 {
+  font-weight: normal;
+}
+
+.info__temp_and_diff {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.info__temp_and_diff__temp {
+  margin: 0 16px;
+  margin-top: 20px;
+}
+
+.info__temp_and_diff__temp__title {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+}
+
+.info__temp_and_diff__temp__number {
+  display: block;
+  text-align: center;
+  font-weight: 500;
+  font-size: 28px;
+  font-family: "Barlow", sans-serif;
+}
+
+.info__temp_and_diff__diff {
+  margin-top: 20px;
+}
+
+.info__temp_and_diff__diff__title {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+}
+
+.info__temp_and_diff__diff__number {
+  display: block;
+  text-align: center;
+  font-weight: 500;
+  font-size: 28px;
+  font-family: "Barlow", sans-serif;
+}
+
+.cloud {
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.cloud__image {
+  text-align: center;
+  padding: 1rem 3rem;
+}
+
+.cloud__image img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  -webkit-animation: shake 5s linear 0s infinite normal forwards;
+          animation: shake 5s linear 0s infinite normal forwards;
+  -webkit-filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.226));
+          filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.226));
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+.weather_today {
+  margin: 1rem 0;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.weather_today__container {
+  background-color: #ffffff;
+  padding: 1.7rem 1rem;
+  color: #000000;
+  display: inline-block;
+  text-align: center;
+  margin-right: 12px;
+  border-radius: 7px;
+}
+
+.weather_today__container:last-child {
+  margin-right: 0;
+}
+
+.weather_today__item {
+  color: #000000;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.weather_today__item__title span {
+  font-size: 20px;
+  font-family: "Barlow", sans-serif;
+}
+
+.weather_today__item__image {
+  width: 80px;
+  height: auto;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.weather_today__item__image img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.weather_today__item__desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.weather_today__item__desc__temp {
+  margin-right: 1rem;
+}
+
+.weather_today__item__desc__temp__title {
+  font-size: 12px;
+}
+
+.weather_today__item__desc__temp__number {
+  font-weight: 500;
+  font-family: "Barlow", sans-serif;
+}
+
+.weather_today__item__desc__diff__title {
+  font-size: 12px;
+}
+
+.weather_today__item__desc__diff__number {
+  font-weight: 500;
+  font-family: "Barlow", sans-serif;
+}
+
+.forecast {
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.forecast__title h1 {
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.forecast__item {
+  margin: 1rem 0;
+}
+
+.forecast__item__title {
+  margin: 1rem 0;
+  margin-bottom: 5px;
+}
+
+.forecast__item__title h4 {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.forecast__item__desc {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 7px;
+}
+
+.forecast__item__desc__image {
+  width: 60px;
+  height: auto;
+}
+
+.forecast__item__desc__image img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.forecast__item__desc__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.forecast__item__desc__info__temp {
+  margin-right: 12px;
+  text-align: center;
+}
+
+.forecast__item__desc__info__temp__title span {
+  font-size: 12px;
+}
+
+.forecast__item__desc__info__temp__number h2 {
+  font-weight: 500;
+  font-family: "Barlow", sans-serif;
+}
+
+.forecast__item__desc__info__diff {
+  text-align: center;
+}
+
+.forecast__item__desc__info__diff__title span {
+  font-size: 12px;
+}
+
+.forecast__item__desc__info__diff__number h2 {
+  font-weight: 500;
+  font-family: "Barlow", sans-serif;
+}
+
+.average {
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.average__temp__title h3 {
+  text-align: center;
+  font-weight: 500;
+}
+
+.average__temp__number h1 {
+  text-align: center;
+  font-family: "Barlow", sans-serif;
+}
+
+.average__diff__title h3 {
+  text-align: center;
+  font-weight: 500;
+}
+
+.average__diff__number h1 {
+  text-align: center;
+  font-family: "Barlow", sans-serif;
+}
+/*# sourceMappingURL=style.css.map */

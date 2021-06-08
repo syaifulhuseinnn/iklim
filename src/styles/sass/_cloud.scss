@@ -1,0 +1,43 @@
+.cloud {
+  margin: 2rem 0;
+  padding: 0 1rem;
+
+  &__image {
+    text-align: center;
+    padding: 1rem 3rem;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      animation: shake 5s linear 0s infinite normal forwards;
+      filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.226));
+    }
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    transform: translate(-2px, -2px);
+  }
+
+  60% {
+    transform: translate(2px, 2px);
+  }
+
+  80% {
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}

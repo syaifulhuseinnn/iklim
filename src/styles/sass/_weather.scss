@@ -1,0 +1,78 @@
+.weather_today {
+  margin: 1rem 0;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  overflow: auto;
+  white-space: nowrap;
+
+  &__container {
+    background-color: #ffffff;
+    padding: 1.7rem 1rem;
+    color: #000000;
+    display: inline-block;
+    text-align: center;
+    margin-right: 12px;
+    border-radius: 7px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__item {
+    color: #000000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title span {
+      font-size: 20px;
+      font-family: "Barlow", sans-serif;
+    }
+
+    &__image {
+      width: 80px;
+      height: auto;
+      text-align: center;
+      margin: 10px 0;
+
+      & img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+      }
+    }
+
+    &__desc {
+      display: flex;
+      justify-content: space-between;
+
+      &__temp {
+        margin-right: 1rem;
+
+        &__title {
+          font-size: 12px;
+        }
+
+        &__number {
+          font-weight: 500;
+          font-family: "Barlow", sans-serif;
+        }
+      }
+
+      &__diff {
+        &__title {
+          font-size: 12px;
+        }
+
+        &__number {
+          font-weight: 500;
+          font-family: "Barlow", sans-serif;
+        }
+      }
+    }
+  }
+}
