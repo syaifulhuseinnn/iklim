@@ -1,8 +1,10 @@
+import round from "lodash/round";
+
 export default function counterAvgDiff(data) {
   let avgDiff = 0;
   data.forEach((element) => {
-    avgDiff += (element.main.temp_max - element.main.temp_min) / 5;
+    avgDiff += (element.main.temp_max - element.main.temp_min) / data.length;
   });
 
-  return avgDiff;
+  return round(avgDiff, 2);
 }

@@ -7,7 +7,7 @@ import counterAvgDiff from "../../helper/counterAvgDiff";
 
 export default function Forecast({ forecast }) {
   return (
-    <div className="forecast">
+    <div className="forecast" data-testid="forecast-list">
       <div className="forecast__title">
         <h1>Next 5 days</h1>
       </div>
@@ -25,7 +25,7 @@ export default function Forecast({ forecast }) {
             <h3>Average Temperature</h3>
           </div>
           <div className="average__temp__number">
-            <h1>{round(counterAvgTemp(forecast), 1)} &#8451;</h1>
+            <h1>{counterAvgTemp(forecast)} &#8451;</h1>
           </div>
         </div>
         <div className="average__diff">
@@ -33,7 +33,7 @@ export default function Forecast({ forecast }) {
             <h3>Average Difference</h3>
           </div>
           <div className="average__diff__number">
-            <h1>{round(counterAvgDiff(forecast), 1)} &#8451;</h1>
+            <h1>{counterAvgDiff(forecast)} &#8451;</h1>
           </div>
         </div>
       </div>

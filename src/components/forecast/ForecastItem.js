@@ -3,7 +3,7 @@ import rain from "../../assets/images/22.png";
 
 export default function ForecastItem({ temp, diff, date }) {
   return (
-    <div className="forecast__item">
+    <div className="forecast__item" data-testid="forecast-item">
       <div className="forecast__item__title">
         <h4>{date}</h4>
       </div>
