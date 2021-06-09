@@ -9,7 +9,7 @@ export default function WeatherItem({ temp, diff, date }) {
           <span>{date}</span>
         </div>
         <div className="weather_today__item__image">
-          <img src={rain} alt="" />
+          <img src={rain} alt="cloud" loading="lazy" />
         </div>
         <div className="weather_today__item__desc">
           <div className="weather_today__item__desc__temp">

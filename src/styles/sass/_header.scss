@@ -3,9 +3,31 @@
   padding: 0 1rem;
   width: 100%;
 
-  &__icon {
-    text-align: right;
-    font-size: 28px;
+  &__input {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+
+    &__suggestion {
+      position: absolute;
+      z-index: 99;
+      top: 100%;
+      left: 0;
+      right: 0;
+      box-shadow: 0 10px 10px #515de560;
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-height: 200px;
+
+      & ul li {
+        background-color: #fff;
+        color: #000000;
+        padding: 10px 10px;
+        border-top: 1px solid #eeecec;
+        text-transform: capitalize;
+        cursor: pointer;
+      }
+    }
   }
 }
 
@@ -30,7 +52,7 @@
 
     &__temp {
       margin: 0 16px;
-      margin-top: 20px;
+      margin-top: 10px;
 
       &__title {
         display: block;
@@ -48,7 +70,7 @@
     }
 
     &__diff {
-      margin-top: 20px;
+      margin-top: 10px;
 
       &__title {
         display: block;

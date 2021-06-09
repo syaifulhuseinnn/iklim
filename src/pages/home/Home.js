@@ -1,48 +1,62 @@
-import Cloud from "../../components/cloud/Cloud";
+import React, { useState } from "react";
+import Cloud from "../../components/cloud_image/CloudImage";
 import Forecast from "../../components/forecast/Forecast";
-import Header from "../../components/header/Header";
+import CurrentWeather from "../../components/current_weather/CurrentWeather";
+import Search from "../../components/search/Search";
 import Weather from "../../components/weather/Weather";
 import useOpenWeather from "../../hooks/useOpenWeather";
 import "../../styles/css/style.css";
 
-export default function Home() {
-  let weather = useOpenWeather();
-  console.log(weather);
+export const HomeContext = React.createContext();
 
-  if (weather.loading === "loading") {
-    return (
-      <div>
-        <h1>Loading...</h1>
+export default function Home() {
+  const [cityId, setCityId] = useState(1214520);
+  const openWeather = useOpenWeather(cityId);
+
+  let content;
+
+  if (openWeather.loading === "loading") {
+    content = (
+      <div className="loading">
+        <h3>Loading...</h3>
       </div>
     );
   }
 
-  if (weather.loading === "failed") {
-    return (
-      <div>
-        <h1>{weather.error}</h1>
+  if (openWeather.loading === "failed") {
+    content = (
+      <div className="error">
+        <h3>{openWeather.error.code}</h3>
+        <h3>{openWeather.error.description}</h3>
       </div>
+    );
+  }
+
+  if (openWeather.loading === "success") {
+    content = (
+      <main>
+        <CurrentWeather
+          temp={openWeather.data.today[0].main.temp}
+          temp_max={openWeather.data.today[0].main.temp_max}
+          temp_min={openWeather.data.today[0].main.temp_min}
+          city={openWeather.data.city.name}
+        />
+
+        <Cloud />
+        {openWeather.data.today.length > 1 && (
+          <Weather today={openWeather.data.today} />
+        )}
+        <Forecast forecast={openWeather.data.next_day} />
+      </main>
     );
   }
 
   return (
-    <div className="container">
-      {weather.loading === "success" && (
-        <>
-          <Header
-            temp={weather.data.today[0].main.temp}
-            temp_max={weather.data.today[0].main.temp_max}
-            temp_min={weather.data.today[0].main.temp_min}
-          />
-          <main>
-            <Cloud />
-            {weather.data.today.length > 1 && (
-              <Weather today={weather.data.today} />
-            )}
-            <Forecast forecast={weather.data.next_day} />
-          </main>
-        </>
-      )}
-    </div>
+    <HomeContext.Provider value={{ cityId, setCityId }}>
+      <div className="container">
+        <Search />
+        {content}
+      </div>
+    </HomeContext.Provider>
   );
 }

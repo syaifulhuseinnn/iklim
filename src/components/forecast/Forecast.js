@@ -2,8 +2,8 @@ import React from "react";
 import ForecastItem from "./ForecastItem";
 import round from "lodash/round";
 import moment from "moment";
-import counterAvgTemp from "./counterAvgTemp";
-import counterAvgDiff from "./counterAvgDiff";
+import counterAvgTemp from "../../helper/counterAvgTemp";
+import counterAvgDiff from "../../helper/counterAvgDiff";
 
 export default function Forecast({ forecast }) {
   return (
